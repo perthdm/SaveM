@@ -34,7 +34,7 @@ const AuthLayout = () => {
           </div>
           <Routes>
             <Route path="/dashboard" element={<UIDashboard />} />
-            <Route path="/regis" element={<UIDashboard />} />
+            <Route path="/crud" element={<UIManagement />} />
           </Routes>
         </div>
       </div>
