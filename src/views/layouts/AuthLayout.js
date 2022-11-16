@@ -2,6 +2,7 @@ import React from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Routes, Route } from "react-router-dom";
 import UIDashboard from "src/views/pages/UIDashboard";
+import UIManagement from "../pages/UIManagement";
 
 const AuthLayout = () => {
   const items = [
@@ -10,8 +11,8 @@ const AuthLayout = () => {
     {
       label: "sub menu",
       key: "submenu",
-      children: [{ label: "item 3", key: "submenu-item-1" }]
-    }
+      children: [{ label: "item 3", key: "submenu-item-1" }],
+    },
   ];
 
   return (
@@ -30,7 +31,7 @@ const AuthLayout = () => {
 
         <div style={{ backgroundColor: "red", width: "100%" }}>
           <Routes>
-            <Route path="/dashboard" element={<UIDashboard />} />
+            <Route path="/" element={<UIManagement />} />
           </Routes>
         </div>
       </div>
