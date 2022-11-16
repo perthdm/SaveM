@@ -1,0 +1,102 @@
+$lx: 1200px;
+$lg: 992px;
+$md: 768px;
+$xs: 576px;
+
+.container-login {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .grid-login {
+    background-color: #fee9ce;
+    height: 100%;
+  }
+  
+  .card-login {
+    width: 1300px;
+    height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .detail-side {
+    text-align: center;
+    padding: 6.5rem 8rem 6.5rem 8rem;
+  }
+  
+  .btn-pocket {
+    width: 80%;
+    border-radius: 12px;
+    height: 50px;
+    // margin-top: 60px;
+  
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-bg-blue {
+    background-color: #2899db;
+    border: 1px solid #2899db;
+    color: white;
+  }
+  
+  .btn-bg-white {
+    background-color: white;
+    border: 1px solid #2899db;
+    color: #2899db;
+  }
+  
+  .btn-bg-blue:hover {
+    background-color: #46b1f0;
+    border: 1px solid #2899db;
+    color: white;
+  }
+  
+  
+  #triangle-bottomleft {
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid red;
+    border-right: 100px solid transparent;
+  }
+  
+  .card-login > .ant-card-body {
+    height: 100%;
+    padding: 0px;
+  }
+  
+  .ant-card-bordered {
+    border: 0px;
+  }
+  
+  @media (max-width: $lg) {
+    .card-login {
+      width: 700px;
+    }
+  }
+  
+  @media (max-width: $md) {
+    .card-login {
+      width: 500px;
+    }
+  }
+  
+  @media (max-width: $xs) {
+    .card-login {
+      width: 350px;
+    }
+  
+    .detail-side {
+      padding: 2.5rem 0.5rem 2.5rem 0.5rem;
+    }
+  }
+  
+  .hero {
+    display: block;
+    box-sizing: border-box;
+    height: 500px;
+    background-color: #5050ee;
+    clip-path: ellipse(85% 100% at 50% 0%);
+  }
