@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Row, Col, Card, Button, Checkbox } from "antd";
 import { UserOutlined, LockFilled } from "@ant-design/icons";
 import FloatingInput from "src/views/compoenents/FloatingInput";
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ImageBox } from "./UILogin.styled";
 
 import SavingIcon from "src/assets/image/icon-login.png";
@@ -11,12 +11,12 @@ import GoogleIcon from "src/assets/image/icon-google.png";
 const UILogin = () => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
-  // const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     console.log("Username ==> ", username);
     console.log("Password ==> ", password);
-    // history.push("/admin");
+    navigate("/");
   };
 
   return (
@@ -28,7 +28,7 @@ const UILogin = () => {
         alignItems: "center",
         // backgroundImage: "linear-gradient(to right, #D6F1F0, #A7E3E1)",
         backgroundColor: "#e3edff",
-        fontFamily: "Comic Sans MS",
+        fontFamily: "Comic Sans MS"
       }}
     >
       <Card className="card-login">
@@ -46,14 +46,14 @@ const UILogin = () => {
               style={{
                 width: "100%",
                 height: "100%",
-                borderRadius: "15px",
+                borderRadius: "15px"
               }}
             >
               <Col xs={24} className="detail-side">
                 <h2
                   style={{
                     color: "#2899db",
-                    marginBottom: "50px",
+                    marginBottom: "50px"
                   }}
                 >
                   Welcome to Save-M.
@@ -90,7 +90,7 @@ const UILogin = () => {
                   <Col
                     sm={12}
                     style={{
-                      textAlign: "right",
+                      textAlign: "right"
                     }}
                   >
                     <a style={{ color: "#2899db", fontSize: "14px" }}>

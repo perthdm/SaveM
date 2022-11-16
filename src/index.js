@@ -6,12 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import "antd/dist/antd.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "src/assets/css/general.scss"
-import "src/assets/css/custom-antd.scss"
-
+import "src/assets/css/general.scss";
+import "src/assets/css/custom-antd.scss";
+import { ProSidebarProvider } from "react-pro-sidebar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <ProSidebarProvider>
+    <App />
+  </ProSidebarProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
