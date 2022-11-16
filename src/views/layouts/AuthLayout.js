@@ -5,16 +5,6 @@ import UIDashboard from "src/views/pages/UIDashboard";
 import UIManagement from "../pages/UIManagement";
 
 const AuthLayout = () => {
-  const items = [
-    { label: "item 1", key: "item-1" }, // remember to pass the key prop
-    { label: "item 2", key: "item-2" }, // which is required
-    {
-      label: "sub menu",
-      key: "submenu",
-      children: [{ label: "item 3", key: "submenu-item-1" }],
-    },
-  ];
-
   return (
     <div style={{ height: "100vh" }}>
       <div style={{ display: "flex", height: "100%" }}>
@@ -29,9 +19,22 @@ const AuthLayout = () => {
           </Menu>
         </Sidebar>
 
-        <div style={{ backgroundColor: "red", width: "100%" }}>
+        <div
+          style={{ backgroundColor: "#f5f6fb", width: "100%", padding: "20px" }}
+        >
+          <div
+            className="shadow-box"
+            style={{
+              background: "white",
+              height: "60px",
+              borderRadius: "10px"
+            }}
+          >
+            Header
+          </div>
           <Routes>
-            <Route path="/" element={<UIManagement />} />
+            <Route path="/dashboard" element={<UIDashboard />} />
+            <Route path="/regis" element={<UIDashboard />} />
           </Routes>
         </div>
       </div>
