@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Button, Input, Tag, Space, Table } from "antd";
-import { Container } from "reactstrap";
 
 const { Search } = Input;
 
@@ -80,7 +79,7 @@ const UIManagement = () => {
     },
   ];
   return (
-    <Container style={{ padding: "20px 0px 20px 0px" }}>
+    <div style={{ padding: " 10px" }}>
       <div>
         <h2 style={{ marginTop: "20px", marginBottom: "20px" }}>Management</h2>
       </div>
@@ -112,7 +111,7 @@ const UIManagement = () => {
           <Table columns={columns} dataSource={data} />
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

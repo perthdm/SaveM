@@ -10,12 +10,15 @@ const AuthLayout = () => {
       <div style={{ display: "flex", height: "100%" }}>
         <Sidebar>
           <Menu>
-            <SubMenu label="Charts">
-              <MenuItem> Pie charts </MenuItem>
-              <MenuItem> Line charts </MenuItem>
+            <MenuItem> Dashboard </MenuItem>
+
+            <SubMenu label="Management">
+              <MenuItem> Summary </MenuItem>
+              <MenuItem> My Statement </MenuItem>
             </SubMenu>
-            <MenuItem> Documentation </MenuItem>
-            <MenuItem> Calendar </MenuItem>
+            <MenuItem> Statistics </MenuItem>
+            <MenuItem> Schedule </MenuItem>
+            <MenuItem> Logout </MenuItem>
           </Menu>
         </Sidebar>
 
@@ -32,9 +35,11 @@ const AuthLayout = () => {
           >
             Header
           </div>
+
+          {/* Wrarpper */}
           <Routes>
             <Route path="/dashboard" element={<UIDashboard />} />
-            <Route path="/crud" element={<UIManagement />} />
+            <Route path="/management" element={<UIManagement />} />
           </Routes>
         </div>
       </div>
