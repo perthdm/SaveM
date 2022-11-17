@@ -1,6 +1,6 @@
 import React from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { Button, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
 import UIManagement from "../pages/UIManagement";
@@ -12,9 +12,14 @@ const AuthLayout = () => {
       <div style={{ display: "flex", height: "100%" }}>
         <Sidebar>
           <Menu>
-            <MenuItem> Dashboard </MenuItem>
-
-            <SubMenu label="Management">
+            <MenuItem routerLink={<Link to="/dashboard" />}>Dashboard</MenuItem>
+            <MenuItem routerLink={<Link to="/statistics" />}>
+              Statistics
+            </MenuItem>
+            <MenuItem routerLink={<Link to="/management" />}>
+              Management
+            </MenuItem>
+            <SubMenu label="Account">
               <MenuItem> Summary </MenuItem>
               <MenuItem> My Statement </MenuItem>
             </SubMenu>
