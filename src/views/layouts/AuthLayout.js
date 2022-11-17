@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Routes, Route, Link } from "react-router-dom";
 import { Row, Col, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
-import UIManagement from "../pages/UIManagement"; 
+import UIManagement from "../pages/UIManagement";
 import { BarChartOutlined, BellOutlined } from "@ant-design/icons";
 import UIProfile from "../pages/UIProfile";
 
@@ -47,18 +47,6 @@ const AuthLayout = () => {
         <div
           style={{ backgroundColor: "#f5f6fb", width: "100%", padding: "20px" }}
         >
-          {/* <div
-            className="shadow-box"
-            style={{
-              background: "white",
-              height: "60px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "start",
-              padding: "10px 15px 10px 15px"
-            }}
-          > */}
           <Row
             className="shadow-box"
             style={{
