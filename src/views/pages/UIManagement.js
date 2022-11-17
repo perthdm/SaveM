@@ -80,9 +80,6 @@ const UIManagement = () => {
   ];
   return (
     <div style={{ padding: " 10px" }}>
-      <div>
-        <h2 className="my-4">Management</h2>
-      </div>
       <Row>
         <Col lg={12} className="my-4">
           <Search

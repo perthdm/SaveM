@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, List, Avatar, message } from "antd";
+import { Row, Col, List, Avatar } from "antd";
 import { Card } from "react-bootstrap";
 import Chart from "react-apexcharts";
 import VirtualList from "rc-virtual-list";

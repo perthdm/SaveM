@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Routes, Route, Link } from "react-router-dom";
 import { Row, Col, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
-import UIManagement from "../pages/UIManagement"; 
+import UIManagement from "../pages/UIManagement";
 import { BarChartOutlined, BellOutlined } from "@ant-design/icons";
 import UIProfile from "../pages/UIProfile";
 
@@ -39,7 +39,12 @@ const AuthLayout = () => {
             </SubMenu>
             <MenuItem> Statistics </MenuItem>
             <MenuItem> Schedule </MenuItem>
-            <MenuItem routerLink={<Link to="/profile" />}> Profile </MenuItem>
+            <MenuItem
+              routerLink={<Link to="/profile" />}
+              onClick={() => setCurrent("Profile")}
+            >
+              Profile
+            </MenuItem>
             <MenuItem> Logout </MenuItem>
           </Menu>
         </Sidebar>
@@ -65,7 +70,7 @@ const AuthLayout = () => {
               height: "60px",
               borderRadius: "10px",
               background: "white",
-              padding: "10px 15px 10px 15px"
+              padding: "10px 15px 10px 15px",
             }}
           >
             <Col span={8} style={{ display: "flex", alignItems: "center" }}>
@@ -73,7 +78,7 @@ const AuthLayout = () => {
                 style={{
                   marginRight: "10px",
                   fontSize: "28px",
-                  color: "#289efa"
+                  color: "#289efa",
                 }}
               />{" "}
               <h5 style={{ marginBottom: "0px" }}>{current}</h5>
@@ -83,7 +88,7 @@ const AuthLayout = () => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "end"
+                justifyContent: "end",
               }}
             >
               <Space>
@@ -98,7 +103,7 @@ const AuthLayout = () => {
                 <Avatar
                   style={{
                     backgroundColor: "orange",
-                    verticalAlign: "middle"
+                    verticalAlign: "middle",
                   }}
                   size="large"
                   gap={4}
