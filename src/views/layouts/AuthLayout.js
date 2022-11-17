@@ -1,8 +1,10 @@
 import React from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Routes, Route } from "react-router-dom";
+import { Button, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
 import UIManagement from "../pages/UIManagement";
+import { GlobalOutlined, BellOutlined } from "@ant-design/icons";
 
 const AuthLayout = () => {
   return (
@@ -30,10 +32,37 @@ const AuthLayout = () => {
             style={{
               background: "white",
               height: "60px",
-              borderRadius: "10px"
+              borderRadius: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "end",
+              padding: "10px 15px 10px 15px"
             }}
           >
-            Header
+            <Space>
+              {/* <GlobalOutlined
+                style={{
+                  fontSize: "30px",
+                  color: "#d8d8d8"
+                }}
+              /> */}
+
+              <div style={{ marginRight: "1rem" }}>
+                <Badge count={4}>
+                  <BellOutlined
+                    style={{ fontSize: "24px", color: "#7b7b7b" }}
+                  />
+                </Badge>
+              </div>
+
+              <Avatar
+                style={{ backgroundColor: "orange", verticalAlign: "middle" }}
+                size="large"
+                gap={4}
+              >
+                EP
+              </Avatar>
+            </Space>
           </div>
 
           {/* Wrarpper */}
