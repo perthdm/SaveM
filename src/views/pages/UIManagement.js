@@ -81,18 +81,15 @@ const UIManagement = () => {
   return (
     <div style={{ padding: " 10px" }}>
       <div>
-        <h2 style={{ marginTop: "20px", marginBottom: "20px" }}>Management</h2>
+        <h2 className="my-4">Management</h2>
       </div>
       <Row>
-        <Col lg={12} style={{ marginTop: "20px", marginBottom: "20px" }}>
+        <Col lg={12} className="my-4">
           <Search
             placeholder="input search text"
-            allowClear
             onSearch={() => {}}
-            style={{
-              width: 304,
-            }}
             enterButton
+            style={{ width: "300px" }}
           />
         </Col>
         <Col
@@ -103,7 +100,7 @@ const UIManagement = () => {
             marginBottom: "20px",
           }}
         >
-          <Button type="primary" className="mx-4">
+          <Button type="primary" className="my-1" style={{ width: "90px" }}>
             เพิ่ม
           </Button>
         </Col>

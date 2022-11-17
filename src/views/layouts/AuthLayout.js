@@ -5,6 +5,7 @@ import { Button, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
 import UIManagement from "../pages/UIManagement";
 import { GlobalOutlined, BellOutlined } from "@ant-design/icons";
+import UIProfile from "../pages/UIProfile";
 
 const AuthLayout = () => {
   return (
@@ -25,6 +26,7 @@ const AuthLayout = () => {
             </SubMenu>
             <MenuItem> Statistics </MenuItem>
             <MenuItem> Schedule </MenuItem>
+            <MenuItem routerLink={<Link to="/profile" />}> Profile </MenuItem>
             <MenuItem> Logout </MenuItem>
           </Menu>
         </Sidebar>
@@ -41,7 +43,7 @@ const AuthLayout = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "end",
-              padding: "10px 15px 10px 15px"
+              padding: "10px 15px 10px 15px",
             }}
           >
             <Space>
@@ -74,6 +76,7 @@ const AuthLayout = () => {
           <Routes>
             <Route path="/dashboard" element={<UIDashboard />} />
             <Route path="/management" element={<UIManagement />} />
+            <Route path="/profile" element={<UIProfile />} />
           </Routes>
         </div>
       </div>
