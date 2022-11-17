@@ -3,8 +3,9 @@ import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Routes, Route, Link } from "react-router-dom";
 import { Row, Col, Space, Avatar, Badge } from "antd";
 import UIDashboard from "src/views/pages/UIDashboard";
-import UIManagement from "../pages/UIManagement";
+import UIManagement from "../pages/UIManagement"; 
 import { BarChartOutlined, BellOutlined } from "@ant-design/icons";
+import UIProfile from "../pages/UIProfile";
 
 const AuthLayout = () => {
   const [current, setCurrent] = useState("Dashboard");
