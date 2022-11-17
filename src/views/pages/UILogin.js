@@ -16,7 +16,7 @@ const UILogin = () => {
   const handleSubmit = () => {
     console.log("Username ==> ", username);
     console.log("Password ==> ", password);
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (

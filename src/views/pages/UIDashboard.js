@@ -1,9 +1,15 @@
-import React from "react";
-import { Row, Col } from "antd";
+import React, { useState, useEffect } from "react";
+import { Row, Col, List, Avatar, message } from "antd";
 import { Card } from "react-bootstrap";
 import Chart from "react-apexcharts";
+import VirtualList from "rc-virtual-list";
+import { InfoCircleTwoTone } from "@ant-design/icons";
 
-const ApChart = () => {
+const fakeDataUrl =
+  "https://randomuser.me/api/?results=20&inc=name,gender,email,nat,picture&noinfo";
+const ConstantHeight = 650;
+const ApexChart = ({ colorLine, textLabel }) => {
+  console.log(colorLine);
   return (
     <Chart
       options={{
@@ -14,12 +20,12 @@ const ApChart = () => {
           radialBar: {
             hollow: {
               margin: 0,
-              size: "70%"
-              //   background: "#293450"
+              size: "60%"
+              // background: "#293450"
             }
           }
         },
-        labels: ["Deposit"],
+        labels: [textLabel],
         dataLabels: {
           name: {
             offsetY: -10,
@@ -35,7 +41,7 @@ const ApChart = () => {
         stroke: {
           lineCap: "round"
         },
-        colors: ["#289efa"]
+        colors: [colorLine]
         // fill: {
         //   type: "gradient",
         //   gradient: {
@@ -54,6 +60,31 @@ const ApChart = () => {
 };
 
 const UIDashboard = () => {
+  const [data, setData] = useState([]);
+
+  const appendData = () => {
+    fetch(fakeDataUrl)
+      .then((res) => res.json())
+      .then((body) => {
+        console.log(body);
+        setData(data.concat(body.results));
+        // message.success(`${body.results.length} more items loaded!`);
+      });
+  };
+
+  useEffect(() => {
+    appendData();
+  }, []);
+
+  const onScroll = (e) => {
+    if (
+      e.currentTarget.scrollHeight - e.currentTarget.scrollTop ===
+      ConstantHeight
+    ) {
+      appendData();
+    }
+  };
+
   let series = [
     {
       name: "Deposit",
@@ -119,7 +150,7 @@ const UIDashboard = () => {
         style: {
           colors: "#6c757d",
           fontSize: "12px",
-          fontFamily: "Comic Sans MS",
+          //   fontFamily: "Comic Sans MS",
           fontWeight: 400,
           cssClass: "apexcharts-xaxis-label"
         },
@@ -160,7 +191,7 @@ const UIDashboard = () => {
       horizontalAlign: "center",
       floating: false,
       fontSize: "14px",
-      fontFamily: "Comic Sans MS",
+      //   fontFamily: "Comic Sans MS",
       fontWeight: 400,
       inverseOrder: false,
       offsetX: 0,
@@ -189,112 +220,131 @@ const UIDashboard = () => {
 
   return (
     <div style={{ padding: " 10px" }}>
-      <div className="my-4">
-        <h2>Dashboard</h2>
-      </div>
-      <Row gutter={[16, 0]}>
-        <Col lg={6}>
-          <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
-            <Card.Body>
-              <Row>
-                <Col lg={14}>
-                  <h5 style={{ color: "#2a3450" }}>Total Application</h5>
-                  <h2> 5,672</h2>
-                  <span
-                    style={{
-                      fontWeight: "bold",
-                      color: "#289efa",
-                      fontSize: "16px"
-                    }}
-                  >
-                    14% Inc.
-                  </span>
-                </Col>
-                <Col lg={10}>{<ApChart />}</Col>
-              </Row>
-            </Card.Body>
-          </Card>
+      <Row gutter={[16, 0]} className="mt-4">
+        <Col xl={18} md={24}>
+          <Row gutter={[16, 16]}>
+            <Col xl={8} lg={8} md={12} sm={24}>
+              <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
+                <Card.Body>
+                  <Row>
+                    <Col xl={14} lg={24} sm={12}>
+                      <h5 style={{ color: "#289efa" }}>SUMMARY</h5>
+                      <h2> 5,672</h2>
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "#289efa",
+                          fontSize: "16px"
+                        }}
+                      >
+                        14% Inc.
+                      </span>
+                    </Col>
+                    <Col xl={10} lg={24} sm={12}>
+                      <ApexChart colorLine="#289efa" textLabel="Summary" />
+                    </Col>
+                  </Row>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col xl={8} lg={8} md={12} sm={24}>
+              <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
+                <Card.Body>
+                  <Row>
+                    <Col xl={14} lg={24} sm={12}>
+                      <h5 style={{ color: "#ffc000" }}>INCOME</h5>
+                      <h2> 5,672</h2>
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "#ffc000",
+                          fontSize: "16px"
+                        }}
+                      >
+                        14% Inc.
+                      </span>
+                    </Col>
+                    <Col xl={10} lg={24} md={12} sm={12}>
+                      <ApexChart colorLine="#ffc000" textLabel="Imcome" />
+                    </Col>
+                  </Row>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col xl={8} lg={8} md={12} sm={24}>
+              <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
+                <Card.Body>
+                  <Row>
+                    <Col xl={14} lg={24} md={12} sm={12}>
+                      <h5 style={{ color: "#ff7948" }}>EXPENSES</h5>
+                      <h2> 5,672</h2>
+                      <span
+                        style={{
+                          fontWeight: "bold",
+                          color: "#ff7948",
+                          fontSize: "16px"
+                        }}
+                      >
+                        14% Inc.
+                      </span>
+                    </Col>
+                    <Col xl={10} lg={24} md={12} sm={12}>
+                      <ApexChart colorLine="#ff7948" textLabel="Expenses" />
+                    </Col>
+                  </Row>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg={24} md={24}>
+              <Card style={{ borderRadius: "20px" }}>
+                <Card.Body style={{ minHeight: "510px" }}>
+                  <Chart
+                    options={options}
+                    series={series}
+                    type="area"
+                    height={450}
+                    style={{ marginTop: "10px", color: "black" }}
+                  />
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Col>
-        <Col lg={6}>
-          <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
-            <Card.Body>
-              <Row>
-                <Col span={14}>
-                  <h5 style={{ color: "#2a3450" }}>Total Application</h5>
-                  <h2> 5,672</h2>
-                  <span
-                    style={{
-                      fontWeight: "bold",
-                      color: "#289efa",
-                      fontSize: "16px"
-                    }}
-                  >
-                    14% Inc.
-                  </span>
-                </Col>
-                <Col span={10}>{<ApChart />}</Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={6}>
-          <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
-            <Card.Body>
-              <Row>
-                <Col span={14}>
-                  <h5 style={{ color: "#2a3450" }}>Total Application</h5>
-                  <h2> 5,672</h2>
-                  <span
-                    style={{
-                      fontWeight: "bold",
-                      color: "#289efa",
-                      fontSize: "16px"
-                    }}
-                  >
-                    14% Inc.
-                  </span>
-                </Col>
-                <Col span={10}>{<ApChart />}</Col>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={6}>
-          <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
-            <Card.Body>
-              <Row>
-                <Col span={14}>
-                  <h5 style={{ color: "#2a3450" }}>Total Application</h5>
-                  <h2> 5,672</h2>
-                  <span
-                    style={{
-                      fontWeight: "bold",
-                      color: "#289efa",
-                      fontSize: "16px"
-                    }}
-                  >
-                    14% Inc.
-                  </span>
-                </Col>
-                <Col span={10}>{<ApChart />}</Col>
-              </Row>
+
+        <Col xl={6} md={24}>
+          <Card style={{ borderRadius: "20px" }}>
+            <Card.Body style={{ minHeight: "720px" }}>
+              <h4>Community</h4>
+              <List>
+                <VirtualList
+                  data={data}
+                  height={ConstantHeight}
+                  itemHeight={47}
+                  itemKey="email"
+                  onScroll={onScroll}
+                >
+                  {(item) => (
+                    <List.Item key={item.email}>
+                      <List.Item.Meta
+                        avatar={<Avatar src={item.picture.large} />}
+                        title={
+                          <span href="https://ant.design">
+                            {item.name.first} {item.name.last}
+                          </span>
+                        }
+                        description={item.email}
+                      />
+                      <InfoCircleTwoTone style={{ fontSize: "24px" }} />
+                    </List.Item>
+                  )}
+                </VirtualList>
+              </List>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-
-      <Card className="mt-4" style={{ borderRadius: "20px" }}>
-        <Card.Body style={{ minHeight: "400px" }}>
-          <Chart
-            options={options}
-            series={series}
-            type="area"
-            height={450}
-            style={{ marginTop: "10px", color: "black" }}
-          />
-        </Card.Body>
-      </Card>
-      {/* </Container> */}
     </div>
   );
 };
