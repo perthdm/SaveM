@@ -52,18 +52,6 @@ const AuthLayout = () => {
         <div
           style={{ backgroundColor: "#f5f6fb", width: "100%", padding: "20px" }}
         >
-          {/* <div
-            className="shadow-box"
-            style={{
-              background: "white",
-              height: "60px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "start",
-              padding: "10px 15px 10px 15px"
-            }}
-          > */}
           <Row
             className="shadow-box"
             style={{
