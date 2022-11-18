@@ -105,3 +105,24 @@ $xs: 576px;
   -moz-box-shadow: 0px 0px 5px 1px rgba(209, 209, 209, 0.66);
   box-shadow: 0px 0px 5px 1px rgba(209, 209, 209, 0.66);
 }
+
+nav {
+  margin-top: 10px !important;
+  ul {
+    padding: 0px 10px !important;
+  }
+  a {
+    border-radius: 15px !important;
+  }
+
+  li {
+    margin-top: 5px !important;
+  }
+}
+
+.menu-item:hover {
+  a {
+    color: black !important;
+    background-color: #2899db;
+  }
+}
