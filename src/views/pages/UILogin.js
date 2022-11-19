@@ -36,7 +36,37 @@ const UILogin = () => {
           {/* LEFT */}
           <Col xs={0} md={0} lg={11}>
             <ImageBox>
-              <img src={SavingIcon} />
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  backgroundColor: "rgb(40 153 219 / 50%)",
+                  zIndex: 3,
+                  overflowY: "auto",
+                  overflowX: "hidden",
+                  borderTopLeftRadius: "15px",
+                  borderBottomLeftRadius: "15px"
+                }}
+              ></div>
+              <img style={{ zIndex: 3, opacity: "0.8" }} src={SavingIcon} />
+              <img
+                src="https://demos.themeselection.com/chameleon-admin-template/app-assets/images/backgrounds/04.jpg"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  zIndex: 2,
+                  borderTopLeftRadius: "15px",
+                  borderBottomLeftRadius: "15px"
+                }}
+              />
             </ImageBox>
           </Col>
 
