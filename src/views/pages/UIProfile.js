@@ -127,11 +127,11 @@ const UIProfile = () => {
               </Card>
             </Col>
           </Row>
-          <Row style={{ marginTop: "20px" }}>
-            <Col lg={8}>
+          <Row>
+            <Col lg={8} sm={24}>
               <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
                 <Row>
-                  <Col lg={24}>
+                  <Col lg={24} sm={24}>
                     <Card
                       style={{
                         backgroundImage:
@@ -141,7 +141,7 @@ const UIProfile = () => {
                       }}
                     >
                       <Row>
-                        <Col lg={24} style={{ height: "100%" }}>
+                        <Col lg={24} sm={24} style={{ height: "100%" }}>
                           <WifiOutlined
                             style={{ color: "white", fontSize: "22px" }}
                           />
@@ -149,9 +149,9 @@ const UIProfile = () => {
                       </Row>
                       <Row>
                         <Col
-                          lg={24}
-                          className="my-4"
+                          lg={24} sm={24}
                           style={{
+                            marginTop:"25px",
                             height: "100%",
                             color: "white",
                             fontSize: "20px",
@@ -160,9 +160,9 @@ const UIProfile = () => {
                           <p>4124 5648 1484 4541</p>
                         </Col>
                       </Row>
-                      <Row>
+                      <Row >
                         <Col
-                          lg={6}
+                          lg={6} sm={6}
                           style={{
                             height: "100%",
                             color: "white",
@@ -175,7 +175,7 @@ const UIProfile = () => {
                           <p style={{ marginTop: "-40px" }}>Plug Jackson</p>
                         </Col>
                         <Col
-                          lg={12}
+                          lg={12} sm={12}
                           style={{
                             height: "100%",
                             color: "white",
@@ -188,12 +188,13 @@ const UIProfile = () => {
                           <p style={{ marginTop: "-40px" }}>11/22</p>
                         </Col>
                         <Col
-                          lg={6}
+                          lg={6} sm={6}
                           style={{
                             height: "100%",
                             color: "white",
                             fontSize: "15px",
                             marginTop: "10px",
+                            textAlign:"right",
                           }}
                         >
                           <p>right</p>
@@ -204,7 +205,7 @@ const UIProfile = () => {
                 </Row>
 
                 <Row>
-                  <Col lg={24}>
+                  <Col lg={24} sm={24}>
                     <h5 style={{ marginTop: "10px" }}>My Project 1</h5>
                   </Col>
                 </Row>
