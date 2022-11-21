@@ -120,7 +120,7 @@ $xs: 576px;
     background: linear-gradient(60deg,#26656c,#25b1c3);  
     color: white !important
   }
-  .sub-menu > .menu-anchor {
+  .sub-menu .active > .menu-anchor {
     background: rgba(255, 255, 255, 0.1) !important;  
     color: white !important
   }

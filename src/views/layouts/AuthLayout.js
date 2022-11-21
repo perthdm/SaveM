@@ -6,6 +6,8 @@ import UIDashboard from "src/views/pages/UIDashboard";
 import UIManagement from "../pages/UIManagement";
 import { BarChartOutlined, BellOutlined } from "@ant-design/icons";
 import UIProfile from "../pages/UIProfile";
+import sbBackground from "src/assets/image/city-sidebar.jpg"
+
 
 const AuthLayout = () => {
   const [current, setCurrent] = useState("Dashboard");
@@ -22,7 +24,7 @@ const AuthLayout = () => {
           defaultCollapsed={isCollapse}
           backgroundColor="rgb(0 0 0 / 80%)"
           style={{ color: "white" }}
-          image="https://demos.creative-tim.com/material-dashboard-material-ui-v4/static/media/sidebar-2.22f68ba5.jpg"
+          image={sbBackground}
         >
           <Menu>
             <MenuItem
