@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Row, Col, Avatar, Button, Card, Image, Tabs } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Label } from "../compoenents/FloatingInput.styled";
+import { WifiOutlined } from "@ant-design/icons";
 
 const UIProfile = () => {
   const [value, setValue] = useState(1);
@@ -61,7 +62,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -82,7 +83,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -99,7 +100,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -127,14 +128,78 @@ const UIProfile = () => {
             </Col>
           </Row>
           <Row style={{ marginTop: "20px" }}>
-            <Col lg={6}>
+            <Col lg={8}>
               <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
                 <Row>
                   <Col lg={24}>
-                    <Image
-                      style={{ width: "100%" }}
-                      src="https://i.imgur.com/zHVV2E9.jpg"
-                    />
+                    <Card
+                      style={{
+                        backgroundImage:
+                          "url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/card-visa.jpg')",
+                        height: "220px",
+                        borderRadius: "1rem",
+                      }}
+                    >
+                      <Row>
+                        <Col lg={24} style={{ height: "100%" }}>
+                          <WifiOutlined
+                            style={{ color: "white", fontSize: "22px" }}
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col
+                          lg={24}
+                          className="my-4"
+                          style={{
+                            height: "100%",
+                            color: "white",
+                            fontSize: "20px",
+                          }}
+                        >
+                          <p>4124 5648 1484 4541</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col
+                          lg={6}
+                          style={{
+                            height: "100%",
+                            color: "white",
+                            fontSize: "15px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          <p style={{ color: "gray" }}>Card Holder</p>
+                          <br />
+                          <p style={{ marginTop: "-40px" }}>Plug Jackson</p>
+                        </Col>
+                        <Col
+                          lg={12}
+                          style={{
+                            height: "100%",
+                            color: "white",
+                            fontSize: "15px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          <p style={{ color: "gray" }}>Expires</p>
+                          <br />
+                          <p style={{ marginTop: "-40px" }}>11/22</p>
+                        </Col>
+                        <Col
+                          lg={6}
+                          style={{
+                            height: "100%",
+                            color: "white",
+                            fontSize: "15px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          <p>right</p>
+                        </Col>
+                      </Row>
+                    </Card>
                   </Col>
                 </Row>
 
@@ -145,25 +210,7 @@ const UIProfile = () => {
                 </Row>
               </Card>
             </Col>
-            <Col lg={6}>
-              <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
-                <Row>
-                  <Col lg={24}>
-                    <Image
-                      style={{ width: "100%" }}
-                      src="https://i.imgur.com/zHVV2E9.jpg"
-                    />
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col lg={24}>
-                    <h5 style={{ marginTop: "10px" }}>My Project 2</h5>
-                  </Col>
-                </Row>
-              </Card>
-            </Col>
-            <Col lg={6}>
+            <Col lg={8}>
               <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
                 <Row>
                   <Col lg={24}>
@@ -181,7 +228,7 @@ const UIProfile = () => {
                 </Row>
               </Card>
             </Col>
-            <Col lg={6}>
+            <Col lg={8}>
               <Card style={{ minHeight: "130px", borderRadius: "20px" }}>
                 <Row>
                   <Col lg={24}>
@@ -210,7 +257,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -228,7 +275,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -245,7 +292,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -264,7 +311,7 @@ const UIProfile = () => {
                 style={{
                   minHeight: "130px",
                   borderRadius: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 <Row>
@@ -344,7 +391,13 @@ const UIProfile = () => {
         <>
           <Row gutter={[16, 0]} className="mt-4">
             <Col lg={8}>
-              <Card style={{ minHeight: "130px", borderRadius: "20px",height:"100%" }}>
+              <Card
+                style={{
+                  minHeight: "130px",
+                  borderRadius: "20px",
+                  height: "100%",
+                }}
+              >
                 <Row>
                   <Col lg={24}>
                     <h5>My Facebook</h5> <p>Mr.Showy</p>
@@ -354,7 +407,13 @@ const UIProfile = () => {
             </Col>
 
             <Col lg={8}>
-              <Card style={{ minHeight: "130px", borderRadius: "20px",height:"100%" }}>
+              <Card
+                style={{
+                  minHeight: "130px",
+                  borderRadius: "20px",
+                  height: "100%",
+                }}
+              >
                 <Row>
                   <Col lg={24}>
                     <h5>My Instagram</h5> <p>Papelus</p>
@@ -364,7 +423,13 @@ const UIProfile = () => {
             </Col>
 
             <Col lg={8}>
-              <Card style={{ minHeight: "130px", borderRadius: "20px",height:"100%" }}>
+              <Card
+                style={{
+                  minHeight: "130px",
+                  borderRadius: "20px",
+                  height: "100%",
+                }}
+              >
                 <Row>
                   <Col lg={24}>
                     <h5>My Twitter</h5> <p>Detail Man</p>
