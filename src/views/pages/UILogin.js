@@ -5,7 +5,7 @@ import FloatingInput from "src/views/compoenents/FloatingInput";
 import { useNavigate } from "react-router-dom";
 import { ImageBox } from "./UILogin.styled";
 
-import SavingIcon from "src/assets/image/icon-login.png";
+import SavingIcon from "src/assets/image/logo-save-m.png";
 import GoogleIcon from "src/assets/image/icon-google.png";
 
 const UILogin = () => {
@@ -51,8 +51,8 @@ const UILogin = () => {
                   borderBottomLeftRadius: "15px"
                 }}
               ></div>
-              <img style={{ zIndex: 3, opacity: "0.8" }} src={SavingIcon} />
-              <img
+              <img alt="logo" style={{ zIndex: 3}} src={SavingIcon} />
+              <img alt="bg"
                 src="https://demos.themeselection.com/chameleon-admin-template/app-assets/images/backgrounds/04.jpg"
                 style={{
                   width: "100%",
